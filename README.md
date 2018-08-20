@@ -1,3 +1,3 @@
 # smykke_database
 
-By Marie &amp; Matt
+Af Marie &amp; Matt
