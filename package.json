@@ -1,0 +1,19 @@
+{
+  "name": "smykke_database",
+  "version": "1.0.0",
+  "description": "af Marie & Matt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattThomassen/smykke_database.git"
+  },
+  "author": "Marie & Matt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattThomassen/smykke_database/issues"
+  },
+  "homepage": "https://github.com/MattThomassen/smykke_database#readme"
+}
