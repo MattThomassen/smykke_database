@@ -1,0 +1,39 @@
+<!-- Viser alle udstyr 1 Kategorier -->
+<div class="col-md-12 overflow">
+
+    <section class="col-md-10 d-inline-block float-left">
+        <h3 class="pt-2">Udstyr</h3>
+
+        <hr>
+
+        <% udstyrKategori.forEach(udstyr => { %>
+            <div class="col-3 d-inline-block ml-5 mt-2">
+                <h6>
+                    <a href="/alleUdstyrKategori/<%= udstyr.udstyrkategori_id %>"><%= udstyr.udstyrkategori_navn %></a>
+                </h6>
+                <img src="/img/Udstyrkategorier/<%= udstyr.udstyr_billede %>" alt="Udstyr Billede" class="w-75">
+            </div>
+        <% }) %>
+
+
+    </section>
+
+    <h3 class="pl-3 pt-2">Tilbud</h3>
+    <hr>
+    <% produkter.forEach(produkt => { %>
+        <aside class="col-md-2 float-left border mb-1">
+            <div class="pl-5 pr-2 d-inline-block">
+                <p class="m-0">
+                    <%= produkt.tilbud_navn %>
+                </p>
+                <img src="/img/Cykler/<%= produkt.tilbud_billede %>" alt="Cykel Billede" class="w-50">
+                <!-- <p class="m-0">Før: </p> -->
+                <p class="mt-2">Nu kun
+                    <%= produkt.tilbud_pris %> Kr.</p>
+            </div>
+        </aside>
+        <% }) %>
+
+
+            &nbsp;
+</div>

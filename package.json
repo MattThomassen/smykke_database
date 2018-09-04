@@ -17,9 +17,18 @@
   },
   "homepage": "https://github.com/MattThomassen/smykke_database#readme",
   "dependencies": {
+    "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "mysql2": "^1.6.1"
+    "express-async-handler": "^1.1.4",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.6.1",
+    "nodemon": "^1.18.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-oauth": "^1.0.0",
+    "path": "^0.12.7"
   }
 }
