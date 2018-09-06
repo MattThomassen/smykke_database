@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <title>Admin Opret</title>
+</head>
+
+<body>
+    <div class="container offset-md-2">
+        <div class="row">
+            <div class="divRound">
+
+                <header class="nav-scroller col-md-12 p-0">
+                    <h1 class="d-flex justify-content-center">Admin Opret</h1>
+                    <h6 class="ml-5 mb-0">
+                        <a href="/adminUdstyr">
+                            <-- Admin Udstyr</a>
+                                <h6>
+                                    <h6 class="float-right mr-5 mb-0">
+                                        <a href="/adminCykler"> Admin Cykel --></a>
+                                    </h6>
+                </header>
+
+                <main class="p-0">
+                    <Section class="d-flex justify-content-around col-md-12">
+                        <div class="col-md-5 mt-2">
+
+                            <h5 class="d-flex justify-content-center">Opret Cykel</h5>
+
+                            <form method="POST" action="/opret" id="formUpdate" name="myForm">
+                                <div class="form-group">
+                                    <label for="example-text-input">Navn:</label>
+                                    <input type="text" name="cykel_navn" class="form-control navn" placeholder="Navn">
+                                </div>
+
+                                <div class="form-group ml-2">
+                                    <label for="example-text-input">Pris:</label>
+                                    <input type="number" name="cykel_pris" class="form-control pris" placeholder="Pris">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="example-text-input">Billede:</label>
+                                    <input type="text" name="cykel_billede" class="form-control billede" placeholder="example.jpg">
+                                </div>
+
+                                <div class="form-group col-md-6 pl-2 pr-2">
+                                    <label for="example-text-input">Dato:</label>
+                                    <input type="datetime-local" name="cykel_dato" class="form-control billede" placeholder="Billede">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleSelect1">Kategori:</label>
+                                    <select id="kategori" class="kategori" name="kategori" type="kategori">
+                                        <% kategori.forEach((kat) => { %>
+
+                                            <option value="<%= kat.kategori_id %>">
+                                                <%= kat.kategori_navn %>
+                                            </option>
+                                            <% })  %>
+                                    </select>
+                                </div>
+
+                                <div class="form-group ml-4">
+                                    <label for="exampleSelect1">Mærke:</label>
+                                    <select id="maerke" class="maerke" name="maerke" type="maerke">
+                                        <% maerke.forEach((maerk) => { %>
+
+                                            <option value="<%= maerk.maerke_id %>">
+                                                <%= maerk.maerke_navn %>
+                                            </option>
+                                            <% })  %>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleSelect1">Model:</label>
+                                    <select id="model" class="model" name="model" type="model">
+                                        <% model.forEach((model) =>{ %>
+
+                                            <option value="<%= model.model_id %>">
+                                                <%= model.model_navn %>
+                                            </option>
+                                            <% })  %>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleTextarea">Beskrivelse:</label>
+                                    <textarea type="text" name="cykel_beskrivelse" class="form-control beskrivelse" id="exampleTextarea" style="width: 430px;"
+                                        rows="3" placeholder="Beskrivelse"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-danger col-md-12 mt-3 submit" name="submit" value="gem">OPRET</button>
+
+                                <div class="mb-3 mt-1 d-flex justify-content-center" id="msg"></div>
+                            </form>
+                        </div>
+
+                        <div class="col-md-5 mt-2">
+                            <h5 class="d-flex justify-content-center">Opret Udstyr</h5>
+                            <form method="POST" action="/opret" id="formUpdate" name="myForm">
+                                <div class="form-group">
+                                    <label for="example-text-input">Navn:</label>
+                                    <input type="text" name="navn" class="form-control navn" placeholder="Navn">
+                                </div>
+
+                                <div class="form-group ml-2">
+                                    <label for="example-text-input">Pris:</label>
+                                    <input type="number" name="pris" class="form-control pris" placeholder="Pris">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleTextarea">Beskrivelse:</label>
+                                    <textarea type="text" name="beskrivelse" class="form-control beskrivelse" id="exampleTextarea" rows="3" placeholder="Beskrivelse"></textarea>
+                                </div>
+
+
+                                <div class="mb-3 mt-1 d-flex justify-content-center" id="msg"></div>
+                            </form>
+                        </div>
+                    </Section>
+                </main>
+
+
+
+
+                <footer class="blog-footer clearfix">
+                    <% include ../partials/footer.ejs %>
+                </footer>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous">
+                    </script>
+                <!-- <script src="js/product.js"></script> -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

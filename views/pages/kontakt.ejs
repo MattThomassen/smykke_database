@@ -22,40 +22,26 @@
                 </header>
 
                 <main>
+                    <!-- viser alle kategorier for cykler -->
                     <div class="col-md-12 overflow">
 
                         <section class="col-md-10 d-inline-block float-left">
-                            <h3 class="pt-2">Cykler</h3>
+                            <h3 class="pt-2">Kontakt</h3>
 
                             <hr>
-                            <% info.forEach(infos => { %>
-                                <img src="/img/Cykler/<%= infos.cykel_billede %>" alt="Cykel Billede" class="col-md-4 float-left">
-                                <h6>
-                                    <%= infos.cykel_navn %>
-                                </h6>
-                                <section class="col-md-8 float-left padding-t1 pt-4">
-                                    <p>
-                                        <%= infos.cykel_beskrivelse %>
-                                    </p>
-                                    <p class="pt-5 mb-0">Pris:
-                                        <%= infos.cykel_pris %> Kr.</p>
-                                </section>
-                                <% }) %>
-                                    <div class="col-md-12 padding-l1 d-inline-block">
-                                        <h5 class="pt-2">Farve:</h5>
-                                        <div>
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_1.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_2.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_3.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_4.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_5.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_6.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_7.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_8.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_9.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_10.jpg" alt="Cykel farve">
-                                        </div>
-                                    </div>
+
+                            <div class="float-left ml-5 mt-4 mr-5">
+                                <h6>City Cykler A/S</h6>
+                                <p>Nygade 65
+                                    <br> 9000 Ålborg</p>
+                                <p class="m-0">Telefon: (+45) 98 10 10 11</p>
+                                <p>Fax: (+45) 98 10 10 12</p>
+                                <p>Mail: contact@cc.dk</p>
+                            </div>
+
+                            <div class="float-left padding-l3">
+                                <img src="/img/Kontakt.jpg" alt="Google Map">
+                            </div>
 
                         </section>
 

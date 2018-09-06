@@ -2,7 +2,7 @@
 const db = require('../config/sql').connect();
 
 module.exports = {
-
+//bliver required i alleUdstyrKategori.js
     visUdstyr: () => {
         return new Promise((resolve, reject) => {
             var sql = `SELECT * FROM udstyr_kategori`;

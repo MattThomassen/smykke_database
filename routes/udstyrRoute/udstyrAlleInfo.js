@@ -1,18 +1,17 @@
-
 const db = require('../../config/sql').connect();
 const tilbud = require('../../services/tilbud');
-const UdstyrKategori = require('../../services/cykelUdstyr');
+const alleUdstyrISammeKategori = require('../../services/alleUdstyrISammeKategori');
 
 module.exports = (app) => {
-//Viser alle info om ET udstyr, og render siden visEnUdstyr.ejs
-    app.get('/visEnUdstyrKategori/:id', async function (req, res) {
-        let udstyrkategori_id = req.params.id
+//Viser alle udstyr i samme kategori
+    app.get('/visEnBestemtUdstyr/:id', async function (req, res) {
+        let udstyrId = req.params.id
         try {
-            const info = await UdstyrKategori.visAlleTingIEnUdstyrKategori(udstyrkategori_id);      
+            const udstyrInfo = await alleUdstyrISammeKategori.udstyrISammeKategori(udstyrId);      
             const produkter = await tilbud.visTilbud();            
             res.render('pages/etBestemtUdstyr', {
                 produkter: produkter,
-                info: info
+                udstyrInfo: udstyrInfo
             });
         } catch (err) {
             console.log(err);

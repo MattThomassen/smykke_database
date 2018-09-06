@@ -1,8 +1,7 @@
-* {
-    box-sizing: border-box;
-}
-*:before, *:after {
-        box-sizing: border-box;
+*, div{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
 }
 
 html {
@@ -104,8 +103,7 @@ footer {
     color: #A4A4A4;
     border-radius: 0 0 1.5em 1.5em !important;  
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    text-align: center;
 }
 
 footer p {
@@ -134,8 +132,20 @@ main img {
     padding-left: 190px;
 }
 
+.padding-l3 {
+    padding-left: 220px;
+}
+
+.padding-l4 {
+    padding-left: 90px !important;
+}
+
 .padding-t1 {
-    padding-top: 30px;
+    padding-top: 30px !important;
+}
+
+.margin-t1 {
+    margin-top: 50px !important;
 }
 
 .padding-b1 {
@@ -148,4 +158,23 @@ div {
 
 imgRight {
     float: right !important;
+}
+
+.poss-tr {
+    position: relative;
+}
+
+.onBanner {
+position: absolute;
+   top: -120px;
+   right: 40px;
+}
+
+.vl {
+    border-left: 2px solid lightgrey;
+    height: 345px;
+    margin-top: 70px;
+}
+.alignCenter {
+    text-align: center !important;
 }

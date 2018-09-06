@@ -22,45 +22,61 @@
                 </header>
 
                 <main>
-                    <div class="col-md-12 overflow">
+                    <div class="col-md-12">
 
                         <section class="col-md-10 d-inline-block float-left">
-                            <h3 class="pt-2">Cykler</h3>
 
-                            <hr>
-                            <% info.forEach(infos => { %>
-                                <img src="/img/Cykler/<%= infos.cykel_billede %>" alt="Cykel Billede" class="col-md-4 float-left">
-                                <h6>
-                                    <%= infos.cykel_navn %>
-                                </h6>
-                                <section class="col-md-8 float-left padding-t1 pt-4">
-                                    <p>
-                                        <%= infos.cykel_beskrivelse %>
-                                    </p>
-                                    <p class="pt-5 mb-0">Pris:
-                                        <%= infos.cykel_pris %> Kr.</p>
-                                </section>
-                                <% }) %>
-                                    <div class="col-md-12 padding-l1 d-inline-block">
-                                        <h5 class="pt-2">Farve:</h5>
+                            <h3 class="pt-2">Nyheder</h3>
+                            <hr class="d-inline-block w-75">
+
+
+                            <% nyheder.forEach(nyhed => { %>
+                                <div class="d-inline-block ml-5 mt-2 border mb-3">
+                                    <div class="col-md-7 p-0 float-left d-inline">
+                                        <h6>
+                                            <%= nyhed.cykel_navn%>
+                                        </h6>
                                         <div>
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_1.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_2.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_3.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_4.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_5.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_6.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_7.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_8.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_9.jpg" alt="Cykel farve">
-                                            <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_10.jpg" alt="Cykel farve">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim
+                                                veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+                                                ex ea commodo consequat.
+                                            </p>
+    
+                                            <p>
+                                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla
+                                                facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
+                                                luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                                            </p>
                                         </div>
+
+                                        <p class="m-0 p-0 padding-t1">Pris:
+                                            <%= nyhed.cykel_pris %> Kr.
+                                        </p>
+
+                                        <p class="mt-3 float-left">
+                                            <%= nyhed.cykel_dato %>
+                                            <a clas="float-left" style="padding-left: 110px" href="/visEnCykel/<%= nyhed.cykel_id %>">MERE INFO</a>
+                                        </p>
+
+                                        <!-- <p class="float-left m-0 p-0 border">
+                                        </p> -->
+
                                     </div>
+
+                                    <div class="col-md-4">
+                                        <img src="/img/Cykler/<%= nyhed.cykel_billede %>" alt="Cykel Billede" class="float-left">
+                                    </div>
+
+                                </div>
+                                <% }) %>
 
                         </section>
 
-                        <h3 class="pl-3 pt-2">Tilbud</h3>
+
+                        <h3 class="pl-3 pt-2 d-inline-block">Tilbud</h3>
                         <hr>
+
                         <% produkter.forEach(produkt => { %>
                             <aside class="col-md-2 float-left border mb-1">
                                 <p class="m-0">

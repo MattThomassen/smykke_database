@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <title>City Cykler</title>
+</head>
+
+<body>
+    <div class="col-md-8 offset-md-2">
+        <div class="row">
+            <div class="divRound">
+
+                <header class="nav-scroller col-md-12 p-0">
+                    <% include ../partials/admin.ejs %>
+                </header>
+
+                <main class="container p-0">
+                    <% cykler.forEach(cykel => { %>
+                        <div class="col-md-5 p-0 ml-5 mt-5">
+                            <h5 class="m-0">
+                                <%= cykel.cykel_navn %>
+                            </h5>
+                            <img src="/img/Cykler/<%= cykel.cykel_billede %>" alt="Cykel Billede" class="w-50">
+                            <!-- <p class="m-0">Før: </p> -->
+                            <p class="mt-2">
+                                <%= cykel.cykel_pris %> Kr.
+                            </p>
+
+                            <p class="mt-2">
+                                <%= cykel.cykel_beskrivelse %>
+                            </p>
+
+                            <p class="mt-2">
+                                <%= cykel.cykel_dato %>
+                            </p>
+
+                            <form class="d-inline mb-5 d-flex justify-content-center" action="/sletCykel/<%= cykel.cykel_id %>" method="POST">
+                                <a href="/rediger/<%= cykel.cykel_id %>" class="btn btn-warning col-md-2 mr-3">RET</a>
+                                <button onclick="return confirm('Vil du Slette?')" type="submit" class="btn btn-danger col-md-2">Slet</button>
+                            </form>
+                        </div>
+                        <% }) %>
+                </main>
+
+
+
+
+                <footer class="blog-footer clearfix">
+                    <% include ../partials/footer.ejs %>
+                </footer>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous">
+                    </script>
+                <!-- <script src="js/product.js"></script> -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

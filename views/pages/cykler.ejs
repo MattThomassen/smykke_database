@@ -22,7 +22,48 @@
                 </header>
 
                 <main>
-                    <% include ../partials/mainCykler.ejs %>
+                    <div class="col-md-12 m-0 p-0">
+                        <section class="col-md-10 d-block">
+                            <div class="float-left">
+
+                                <h3 class="pl-3 pt-3">Cykler</h3>
+
+                                <hr class="mb-3 mt-3">
+                                <% kategori.forEach(kat => { %>
+                                    <div class="col-3 d-inline-block ml-5 mt-2">
+                                        <h6>
+                                            <a href="/alleKategori/<%= kat.kategori_id %>">
+                                                <%= kat.kategori_navn %>
+                                            </a>
+                                        </h6>
+                                        <img src="/img/Cykeltyper/<%= kat.kategori_billede %>" alt="Cykel Billede" class="w-75">
+                                    </div>
+                                <% }) %>
+
+                            </div>
+
+
+                        </section>
+
+                        <div class="vl float-left ml-2"></div>
+
+                        <div class="col-md-2 float-left p-1 pl-3 pr-3">
+                            <h3 class="pl-3 pt-3">Tilbud</h3>
+                            <hr class="m-2">
+                            <% produkter.forEach(produkt => { %>
+                                <div class="border mb-2">
+                                    <p>
+                                        <%= produkt.tilbud_navn %>
+                                    </p>
+                                    <img src="/img/Cykler/<%= produkt.tilbud_billede %>" alt="Cykel Billede" class="w-50">
+
+                                    <p>Nu kun
+                                        <%= produkt.tilbud_pris %> Kr.</p>
+                                </div>
+                                <% }) %>
+                        </div>
+
+                    </div>
                 </main>
 
 

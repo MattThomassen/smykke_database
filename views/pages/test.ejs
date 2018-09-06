@@ -1,0 +1,147 @@
+<% smykke.forEach(produkt => { %>
+    <form method="POST" action="/redigere/<%= produkt.smykke_id %>">
+        <div class="form-group row">
+            <label for="example-text-input">Navn:</label>
+            <input type="text" name="navn" id="example-text-input" class="form-control" value="<%= produkt.navn %>">
+        </div>
+
+        <div class="form-group row">
+            <label for="example-text-input">Pris:</label>
+            <input type="text" name="pris" id="example-text-input" class="form-control" value="<%= produkt.pris %>">
+        </div>
+
+        <div class="form-group row">
+            <label for="exampleTextarea">Beskrivelse:</label>
+            <textarea type="text" name="beskrivelse" class="form-control" id="exampleTextarea" rows="3"><%= produkt.beskrivelse %></textarea>
+        </div>
+
+        <!-- <div class="form-group row">
+            <label for="exampleSelect1">Kategori:</label>
+            <selectname="kategori" type="text">
+               <%= kategori %>
+                <% kategori.forEach(function(cat){ %>
+
+                    <option value='<%= cat.kategori_id %>'>
+                        <%= cat.navn %>
+                    </option>
+                    <% })  %>
+            </select>
+        </div> -->
+
+        <div class="form-group row">
+            <label for="exampleSelect1">Kategori:</label>
+            <select id="kategori" name="kategori" type="kategori">
+                <% kategori.forEach(function(kat){ %>
+
+                    <option value="<%= kat.kategori_id %>">
+                        <%= kat.navn %>
+                    </option>
+                    <% })  %>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label for="exampleSelect1">Metal:</label>
+            <select id="metal" name="metal" type="metal">
+                <% metal.forEach(function(met){ %>
+
+                    <option value="<%= met.metal_id %>">
+                        <%= met.navn %>
+                    </option>
+                    <% })  %>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-danger d-flex justify-content-center col-md-4 m-2">GEM</button>
+    </form>
+    <% });%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <% if(typeof enCykel != "undefined") {%>
+        <% enCykel.forEach(produkt => { %>
+            <Section class="d-flex justify-content-around col-md-12">
+                <div class="col-md-5 mt-2">
+
+                        <h5 class="d-flex justify-content-center"><%= produkt.cykel_navn %></h5>
+
+                        <form method="POST" action="/redigere/<%= produkt.cykel_id %>">
+                            <div class="form-group">
+                                <label for="example-text-input">Navn:</label>
+                                <input type="text" name="navn" class="form-control navn" placeholder="Navn">
+                            </div>
+
+                            <div class="form-group ml-2">
+                                <label for="example-text-input">Pris:</label>
+                                <input type="number" name="pris" class="form-control pris" placeholder="Pris">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="example-text-input">Billede:</label>
+                                <input type="text" name="billede" class="form-control billede" placeholder="example.jpg">
+                            </div>
+
+                            <div class="form-group ml-2">
+                                <label for="example-text-input">Dato:</label>
+                                <input type="date" name="billede" class="form-control billede" placeholder="Billede">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleSelect1">Kategori:</label>
+                                <select id="kategori" class="kategori" name="kategori" type="kategori">
+                                    <% kategori.forEach((kat) => { %>
+
+                                        <option value="<%= kat.kategori_id %>">
+                                            <%= kat.kategori_navn %>
+                                        </option>
+                                        <% })  %>
+                                </select>
+                            </div>
+
+                            <div class="form-group ml-4">
+                                <label for="exampleSelect1">Mærke:</label>
+                                <select id="maerke" class="maerke" name="maerke" type="maerke">
+                                    <% maerke.forEach((maerk) => { %>
+
+                                        <option value="<%= maerk.kategori_id %>">
+                                            <%= maerk.maerke_navn %>
+                                        </option>
+                                        <% })  %>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleSelect1">Model:</label>
+                                <select id="model" class="model" name="model" type="model">
+                                    <% model.forEach((model) =>{ %>
+
+                                        <option value="<%= model.model_id %>">
+                                            <%= model.model_navn %>
+                                        </option>
+                                        <% })  %>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleTextarea">Beskrivelse:</label>
+                                <textarea type="text" name="beskrivelse" class="form-control beskrivelse" id="exampleTextarea" style="width: 430px;" rows="3"
+                                    placeholder="Beskrivelse"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger d-flex justify-content-center col-md-12 m-2">GEM</button>
+
+                            <div class="mb-3 mt-1 d-flex justify-content-center" id="msg"></div>
+                        </form>
+                </div>
+            </Section>
+            <% });%>
+                <% } %>

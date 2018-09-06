@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <title>City Cykler</title>
+</head>
+
+<body>
+    <div class="col-md-8 offset-md-2">
+        <div class="row">
+            <div class="divRound">
+
+                <header class="nav-scroller col-md-12 p-0">
+                    <% include ../partials/header.ejs %>
+                </header>
+
+                <main class="col-md-12">
+
+                    <section class="col-md-10 mt-2 float-left">
+                        <h3>Avanceret Søg</h3>
+                        <hr>
+                        <div class="col-md-6 offset-3">
+                            <form id='formSearch' class="text-center1" method="POST" action="/avanceretSoeg">
+                                Navn:
+                                <input type="text" class="txt" name="txt">
+                                <br>Pris:
+                                <input type="number" class="pris mt-2 ml-2 mb-4" name="pris">
+
+                                <div class="">
+                                    Kategori:
+                                    <select>
+                                        <option value="1">Mountainbikes</option>
+                                        <option value="2">Racercykler</option>
+                                        <option value="3">Damecykler</option>
+                                        <option value="4">Herrecykler</option>
+                                        <option value="5">Børnecykler</option>
+                                        <option value="6">Trehjulede</option>
+                                    </select>
+                                </div>
+
+                                <div class="">
+                                    Mærke:
+                                    <select>
+                                        <option value="1">Kildemoes</option>
+                                        <option value="2">MBK</option>
+                                        <option value="3">Mustang</option>
+                                        <option value="4">Jensen</option>
+                                        <option value="5">Bianchi</option>
+                                        <option value="6">Tårnby</option>
+                                        <option value="7">Winther</option>
+                                    </select>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <input type="submit" class="submit mb-4 mt-1 col-md-12" name="submit" value="søg">
+                                </div>
+                            </form>
+                        </div>
+                        <% if(typeof avanceretSoeg != "undefined") {%>
+
+                            <% avanceretSoeg.forEach(soeg => { %>
+                                <%= soeg.cykel_navn%>
+                                    <%= soeg.cykel_kategori%>
+                                        <% }) %>
+                                            <% } %>
+                    </section>
+
+                    </section>
+
+                    <div class="col-md-2">
+                        <h3 class="pl-3 pt-2 d-inline-block">Tilbud</h3>
+                        <hr>
+                    </div>
+
+                    <% produkter.forEach(produkt => { %>
+                        <aside class="col-md-2 float-left border mb-1">
+                            <p class="m-0">
+                                <%= produkt.tilbud_navn %>
+                            </p>
+                            <img src="/img/Cykler/<%= produkt.tilbud_billede %>" alt="Cykel Billede" class="w-50">
+                            <!-- <p class="m-0">Før: </p> -->
+                            <p class="mt-2">Nu kun
+                                <%= produkt.tilbud_pris %> Kr.</p>
+                        </aside>
+                        <% }) %>
+
+
+                            &nbsp;
+                </main>
+
+
+
+
+                <footer class="blog-footer clearfix">
+                    <% include ../partials/footer.ejs %>
+                </footer>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous">
+                    </script>
+                <!-- <script src="js/product.js"></script> -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -22,7 +22,49 @@
                 </header>
 
                 <main>
-                    <% include ../partials/mainUdstyr.ejs %>
+                    <div class="col-md-12 m-0 p-0">
+                        <section class="col-md-10 d-block">
+                            <div class="float-left">
+
+                                <h3 class="pl-3 pt-3">Udstyr</h3>
+
+                                <hr class="mb-3 mt-3">
+
+                                <% udstyrKategori.forEach(udstyr => { %>
+                                    <div class="col-3 ml-5 mt-5">
+                                        <h6>
+                                            <a class="pl-5" href="/alleUdstyrKategori/<%= udstyr.udstyrkategori_id %>">
+                                                <%= udstyr.udstyrkategori_navn %>
+                                            </a>
+                                        </h6>
+                                        <img class="col-md-11 pl-4" src="/img/Udstyrkategorier/<%= udstyr.udstyr_billede %>" alt="Udstyr Billede">
+                                    </div>
+                                    <% }) %>
+
+                            </div>
+
+
+                        </section>
+
+                        <div class="vl float-left ml-2"></div>
+
+                        <div class="col-md-2 float-left p-1 pl-3 pr-3">
+                            <h3 class="pl-3 pt-3">Tilbud</h3>
+                            <hr class="m-2" style="width: 150px;">
+                            <% produkter.forEach(produkt => { %>
+                                <div class="border mb-2">
+                                    <p>
+                                        <%= produkt.tilbud_navn %>
+                                    </p>
+                                    <img src="/img/Cykler/<%= produkt.tilbud_billede %>" alt="Cykel Billede" class="w-50">
+
+                                    <p>Nu kun
+                                        <%= produkt.tilbud_pris %> Kr.</p>
+                                </div>
+                                <% }) %>
+                        </div>
+
+                    </div>
                 </main>
 
 
