@@ -9,7 +9,7 @@ module.exports = (app) => {
         try {
             const produkter = await tilbud.visTilbud();
             const nyheder = await alleNyheder.alleNyheder();
-            console.log('nyheder: ', nyheder);
+            // console.log('nyheder: ', nyheder);
             res.render('pages/nyheder', {
                 produkter: produkter,
                 nyheder: nyheder
