@@ -8,7 +8,8 @@ module.exports = (app) => {
         try {
             const produkter = await tilbud.visTilbud();
             res.render('pages/kontakt', {
-                produkter: produkter
+                produkter: produkter,
+                side: 'kontakt'
             });
         } catch (err) {
             console.log(err);

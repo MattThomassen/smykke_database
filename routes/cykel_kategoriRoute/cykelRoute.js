@@ -12,7 +12,8 @@ module.exports = (app) => {
             const kategori = await cyklerKategori.visKategori();
             res.render('pages/cykler', {
                 produkter: produkter,
-                kategori: kategori
+                kategori: kategori,
+                side: 'cykler'
             });
         } catch (err) {
             console.log(err);

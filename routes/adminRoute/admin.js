@@ -66,16 +66,16 @@ module.exports = (app) => {
         let cykelId = req.params.id
         let cykelNavn = req.body.navn
         let cykelPris = req.body.pris
+        let cykelBeskrivelse = req.body.beskrivelse
         let cykelBillede = req.body.billede
-        let cykelDato = req.body.dato
-        let fk_kategori = req.body.kategori
         let fk_maerke = req.body.maerke
         let fk_model = req.body.model
-        let cykelBeskrivelse = req.body.beskrivelse
+        let fk_kategori = req.body.kategori
+        let cykelDato = req.body.dato
         // console.log(': ', );
         try {
-            const redigerCykel = await adminService.redigerCykel(cykelId, cykelNavn, cykelPris, cykelBillede, cykelDato, fk_kategori, fk_maerke, fk_model, cykelBeskrivelse);
-            res.redirect('/admin');
+            const redigerCykel = await adminService.redigerCykel(cykelId, cykelNavn, cykelPris, cykelBeskrivelse, cykelBillede, fk_maerke, fk_model, fk_kategori, cykelDato);
+            res.redirect('/adminCykler');
         } catch (err) {
             console.log(err);
         }

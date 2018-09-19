@@ -19,17 +19,23 @@
 
                 <header class="nav-scroller col-md-12 p-0">
                     <h1 class="d-flex justify-content-center">Admin Opret</h1>
-                    <h6 class="ml-5 mb-0">
-                        <a href="/adminUdstyr">
-                            <-- Admin Udstyr</a>
-                                <h6>
-                                    <h6 class="float-right mr-5 mb-0">
-                                        <a href="/adminCykler"> Admin Cykel --></a>
-                                    </h6>
+                    <nav>
+                        <ul class="d-flex justify-content-center bg-white mt-4">
+                            <li class="ml-4 mr-4">
+                                <a href="/admin">Admin Opret</a>
+                            </li>
+                            <li class="ml-4 mr-4">
+                                <a href="/adminCykler">Admin Cykler</a>
+                            </li>
+                            <li class="ml-4 mr-4">
+                                <a href="/admin">Admin Udstyr</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </header>
 
                 <main class="p-0">
-                    <Section class="d-flex justify-content-around col-md-12">
+                    <Section class="d-flex justify-content-center col-md-12">
                         <div class="col-md-5 mt-2">
 
                             <h5 class="d-flex justify-content-center">Opret Cykel</h5>
@@ -102,28 +108,15 @@
                             </form>
                         </div>
 
+
+                        <!-- Opret Udstyr Her -->
                         <div class="col-md-5 mt-2">
+
                             <h5 class="d-flex justify-content-center">Opret Udstyr</h5>
-                            <form method="POST" action="/opret" id="formUpdate" name="myForm">
-                                <div class="form-group">
-                                    <label for="example-text-input">Navn:</label>
-                                    <input type="text" name="navn" class="form-control navn" placeholder="Navn">
-                                </div>
-
-                                <div class="form-group ml-2">
-                                    <label for="example-text-input">Pris:</label>
-                                    <input type="number" name="pris" class="form-control pris" placeholder="Pris">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleTextarea">Beskrivelse:</label>
-                                    <textarea type="text" name="beskrivelse" class="form-control beskrivelse" id="exampleTextarea" rows="3" placeholder="Beskrivelse"></textarea>
-                                </div>
 
 
-                                <div class="mb-3 mt-1 d-flex justify-content-center" id="msg"></div>
-                            </form>
                         </div>
+
                     </Section>
                 </main>
 

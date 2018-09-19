@@ -13,7 +13,8 @@ module.exports = (app) => {
             const produkter = await tilbud.visTilbud();            
             res.render('pages/etBestemtCykel', {
                 produkter: produkter,
-                info: info
+                info: info,
+                side: 'cykler'
             });
         } catch (err) {
             console.log(err);

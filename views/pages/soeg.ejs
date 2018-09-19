@@ -28,7 +28,17 @@
                         <hr>
                         <div class="col-md-6 offset-3">
                             <form id='formSearch' class="text-center1" method="POST" action="/avanceretSoeg">
-                                    
+
+                                <% if(typeof kategorier != "undefined") {%>
+                                    <select>
+                                        <option value="0">Vælg Kategori</option>
+                                        <% kategorier.forEach(kategori(elm){ %>
+                                            <option value="<%= elm.kategori_id %>">
+                                                <%= kategori.kategori_navn %>
+                                            </option>
+                                            <% })  %>
+                                    </select>
+                                    <% } %>
                                         <div class="">
                                             Kategori:
                                             <select name="kategori">

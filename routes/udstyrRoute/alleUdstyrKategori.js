@@ -14,7 +14,8 @@ module.exports = (app) => {
             const produkter = await tilbud.visTilbud();            
             res.render('pages/visEnUdstyr', {
                 produkter: produkter,
-                udstyrInfo: udstyrInfo
+                udstyrInfo: udstyrInfo,
+                side: 'udstyr'
             });
         } catch (err) {
             console.log(err);

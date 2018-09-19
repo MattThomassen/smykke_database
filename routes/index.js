@@ -11,8 +11,10 @@ module.exports = (app) => {
     require ('./kontakt')(app);                              
     require ('./nyheder')(app);  
     require ('./avanceretSoeg')(app);
+    require ('./soeg')(app);                                                                                                                                
     require ('./adminRoute/admin')(app);                                                                                                                                
-    // require ('./adminRoute/adminRoute')(app);                                                                                                                                
-    require ('./adminRoute/adminCykler')(app);                                                                                                                                
-    // require ('./adminRoute/adminUdstyr')(app);                                                                                                                                
+    require ('./adminRoute/adminCykler')(app);   
+    require ('./pagingRoute')(app);                                                                                                                                                                                                                                                                 
+    require ('./produkt')(app);                                                                                                                                                                                                                                                                 
+    require ('./Test')(app);                                                                                                                                
 };

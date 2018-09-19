@@ -1,46 +1,42 @@
-<Section class="row d-flex justify-content-center">
-        <div class="col-md-6">
-            <form method="POST" action="/opret" id="formUpdate" name="myForm">
-                <div class="form-group row">
-                    <label for="example-text-input">Navn:</label>
-                    <input type="text" name="navn" class="form-control navn" placeholder="Navn">
-                </div>
-
-                <div class="form-group row">
-                    <label for="example-text-input">Pris:</label>
-                    <input type="number" name="pris" class="form-control pris" placeholder="Pris">
-                </div>
-
-                <div class="form-group row">
-                    <label for="exampleTextarea">Beskrivelse:</label>
-                    <textarea type="text" name="beskrivelse" class="form-control beskrivelse" id="exampleTextarea" rows="3" placeholder="Beskrivelse"></textarea>
-                </div>
-
-                <div class="form-group row">
-                    <label for="exampleSelect1">Kategori:</label>
-                    <select id="kategori" class="kategori ml-1" name="kategori" type="kategori">
-                        <% cykler.forEach(function(kat){ %>
-
-                            <option value="<%= kat.kategori_id %>">
-                                <%= kat.cykel_kategori %>
-                            </option>
-                            <% })  %>
-                    </select>
-                </div>
-
-                <div class="form-group row">
-                    <label for="exampleSelect1">Metal:</label>
-                    <select id="metal" class="metal ml-4" name="metal" type="metal">
-                        <% metal.forEach(function(met){ %>
-
-                            <option value="<%= met.metal_id %>">
-                                <%= met.navn %>
-                            </option>
-                            <% })  %>
-                    </select>
-                    <button type="submit" class="btn btn-danger col-md-12 mt-3 submit" name="submit" value="gem">OPRET</button>
-                </div>
-                <div class="mb-3 mt-1 d-flex justify-content-center" id="msg"></div>
-            </form>
+<div id="topheader">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="/">home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cykler">page 1</a>
+                    </li>
+                    <li>
+                        <a href="/udstyr">page 2</a>
+                    </li>
+                    <li>
+                        <a href="/kontakt">page 3</a>
+                    </li>
+                    <li>
+                        <a href="/nyheder">page 3</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </Section>
+    </nav>
+</div>

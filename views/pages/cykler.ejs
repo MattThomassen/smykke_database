@@ -26,12 +26,12 @@
                         <section class="col-md-10 d-block">
                             <div class="float-left">
 
-                                <h3 class="pl-3 pt-3">Cykler</h3>
+                                <h3 class="pl-3 pt-3 mb-1">Cykler</h3>
 
                                 <hr class="mb-3 mt-3">
                                 <% kategori.forEach(kat => { %>
-                                    <div class="col-3 d-inline-block ml-5 mt-2">
-                                        <h6>
+                                    <div class="col-md-3 ml-5 mt-5 alignCenter">
+                                        <h6>                                            
                                             <a href="/alleKategori/<%= kat.kategori_id %>">
                                                 <%= kat.kategori_navn %>
                                             </a>
@@ -51,13 +51,13 @@
                             <h3 class="pl-3 pt-3">Tilbud</h3>
                             <hr class="m-2">
                             <% produkter.forEach(produkt => { %>
-                                <div class="border mb-2">
-                                    <p>
+                                <div class="border mb-2 alignCenter">
+                                    <p class="mt-1">
                                         <%= produkt.tilbud_navn %>
                                     </p>
                                     <img src="/img/Cykler/<%= produkt.tilbud_billede %>" alt="Cykel Billede" class="w-50">
 
-                                    <p>Nu kun
+                                    <p class="mb-1">Nu kun
                                         <%= produkt.tilbud_pris %> Kr.</p>
                                 </div>
                                 <% }) %>

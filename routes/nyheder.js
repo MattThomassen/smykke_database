@@ -12,7 +12,8 @@ module.exports = (app) => {
             // console.log('nyheder: ', nyheder);
             res.render('pages/nyheder', {
                 produkter: produkter,
-                nyheder: nyheder
+                nyheder: nyheder,
+                side: 'nyheder'
             });
         } catch (err) {
             console.log(err);

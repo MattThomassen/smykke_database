@@ -13,7 +13,8 @@ module.exports = (app) => {
             // console.log('udstyrkategori: ', udstyrKategori);
             res.render('pages/udstyr', {
                 produkter: produkter,
-                udstyrKategori: udstyrKategori
+                udstyrKategori: udstyrKategori,
+                side: 'udstyr'
             });
         } catch (err) {
             console.log(err);

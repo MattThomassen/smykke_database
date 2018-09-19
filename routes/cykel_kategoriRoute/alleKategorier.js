@@ -9,10 +9,13 @@ module.exports = (app) => {
         let kategori_id = req.params.id
         try {
             const enKategori = await cyklerKategori.visAlleCycklerIEnKategori(kategori_id);
-            const produkter = await tilbud.visTilbud();            
+            const produkter = await tilbud.visTilbud(); 
+            console.log(enKategori);
+                       
             res.render('pages/visEnKategori', {
                 enKategori: enKategori,
-                produkter: produkter
+                produkter: produkter,
+                side: 'cykler'
             });
         } catch (err) {
             console.log(err);

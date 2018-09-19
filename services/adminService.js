@@ -3,10 +3,17 @@ const db = require('../config/sql').connect();
 
 module.exports = {
 
+
     adminCykler: () => {
         return new Promise((resolve, reject) => {
 
-            var sql = `SELECT * FROM cykler ORDER BY cykel_dato`;
+            var sql = `SELECT cykler.*, cykel_kategori.kategori_navn AS 'kategori', cykel_maerke.maerke_navn AS 'maerke', cykel_model.model_navn AS 'model'
+            FROM (((cykler
+            INNER JOIN cykel_kategori ON fk_kategori = kategori_id)
+            INNER JOIN cykel_maerke ON fk_maerke = maerke_id) 
+            INNER JOIN cykel_model ON fk_model = model_id)
+            ORDER BY cykel_dato                                  
+            `;
             db.query(sql, function (err, result) {
                 if (err) reject(err)
 
@@ -15,6 +22,19 @@ module.exports = {
 
         })
     },
+
+    // adminCykler: () => {
+    //     return new Promise((resolve, reject) => {
+
+    //         var sql = `SELECT * FROM cykler ORDER BY cykel_dato`;
+    //         db.query(sql, function (err, result) {
+    //             if (err) reject(err)
+
+    //             resolve(result);
+    //         });
+
+    //     })
+    // },
 
     //opretter cykel
     opretCykel: (cykel_navn, cykel_pris, cykel_billede, cykel_dato, fk_kategori, fk_maerke, fk_model, cykel_beskrivelse) => {
@@ -39,20 +59,20 @@ module.exports = {
     },
 
     //updatere en cykel
-    redigerCykel: (cykelId, cykelNavn, cykelPris, cykelBillede, cykelDato, fk_kategori, fk_maerke, fk_model, cykelBeskrivelse) => {
+    redigerCykel: (cykelId, cykelNavn, cykelPris, cykelBeskrivelse, cykelBillede, fk_maerke, fk_model, fk_kategori, cykelDato) => {
         return new Promise((resolve, reject) => {
             var sql = `UPDATE cykler
-            SET cykel_navn = '${cykelNavn}',
-                cykel_pris = '${cykelPris}',
-                cykel_billede = '${cykelBillede}',
-                cykel_dato = '${cykelDato}',
-                fk_kategori = '${fk_kategori}',
-                fk_maerke = '${fk_maerke}',
-                fk_model = '${fk_model}',
-                cykel_beskrivelse = '${cykelBeskrivelse}'
+            SET cykel_navn = ?,
+                cykel_pris = ?,
+                cykel_beskrivelse = ?,
+                cykel_billede = ?,
+                fk_maerke = ?,
+                fk_model = ?,
+                fk_kategori = ?,
+                cykel_dato = ?
             WHERE cykel_id = ${cykelId}`;
             console.log(sql);
-            db.query(sql, function (err, result) {
+            db.query(sql, [cykelNavn, cykelPris, cykelBeskrivelse, cykelBillede, fk_maerke, fk_model, fk_kategori, cykelDato], function (err, result) {
                 if (err) reject(err)
 
                 resolve(result);
@@ -60,6 +80,29 @@ module.exports = {
 
         })
     },
+
+    //updatere en cykel
+    // redigerCykel: (cykelId, cykelNavn, cykelPris, cykelBillede, cykelDato, fk_kategori, fk_maerke, fk_model, cykelBeskrivelse) => {
+    //     return new Promise((resolve, reject) => {
+    //         var sql = `UPDATE cykler
+    //         SET cykel_navn = '${cykelNavn}',
+    //             cykel_pris = '${cykelPris}',
+    //             cykel_billede = '${cykelBillede}',
+    //             cykel_dato = '${cykelDato}',
+    //             fk_kategori = '${fk_kategori}',
+    //             fk_maerke = '${fk_maerke}',
+    //             fk_model = '${fk_model}',
+    //             cykel_beskrivelse = '${cykelBeskrivelse}'
+    //         WHERE cykel_id = ${cykelId}`;
+    //         console.log(sql);
+    //         db.query(sql, function (err, result) {
+    //             if (err) reject(err)
+
+    //             resolve(result);
+    //         });
+
+    //     })
+    // },
 
     //henter alt fra cykler, kategori, mærke og model navn i den cykel du klikker på
     enCykel: (cykel_id) => {

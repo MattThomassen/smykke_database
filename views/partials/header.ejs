@@ -1,42 +1,82 @@
 <img src="/img/banner_logo.jpg" class="img-fluid roundImg" alt="Responsive banner">
 
 
-<nav class="navbar-expand-lg navbar-light">
+<nav class="navbar-expand-lg navbar-light menuNav">
 
     <div class="collapse navbar-collapse" id="navbarNav">
 
         <ul class="navbar-nav">
+            <% if(side == "index"){ %>
+                <li class="nav-item active border border-secondary aktiv">
+                    <a class="nav-link mx-5" href="/">Forside
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <% }else{ %>
+                    <li class="nav-item active border border-secondary">
+                        <a class="nav-link mx-5" href="/">Forside
+                            <span class="sr-only"></span>
+                        </a>
+                    </li>
+                    <% } %>
 
-            <li class="nav-item active border border-secondary">
-                <a class="nav-link mx-5" href="/">Forside
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
+                        <% if(side == "cykler"){ %>
+                            <li class="nav-item border border-secondary aktiv">
+                                <a class="nav-link mx-5" href="/cykler">Cykler</a>
+                            </li>
+                            <% }else{ %>
+                                <li class="nav-item border border-secondary">
+                                    <a class="nav-link mx-5" href="/cykler">Cykler</a>
+                                </li>
+                                <% } %>
 
-            <li class="nav-item border border-secondary">
-                <a class="nav-link mx-5" href="/cykler">Cykler</a>
-            </li>
+                                    <% if(side == "udstyr"){ %>
+                                        <li class="nav-item border border-secondary aktiv">
+                                            <a class="nav-link mx-5" href="/udstyr">Udstyr</a>
+                                        </li>
+                                        <% }else{ %>
+                                            <li class="nav-item border border-secondary">
+                                                <a class="nav-link mx-5" href="/udstyr">Udstyr</a>
+                                            </li>
+                                            <% } %>
 
-            <li class="nav-item border border-secondary">
-                <a class="nav-link mx-5" href="/udstyr">Udstyr</a>
-            </li>
+                                                <% if(side == "kontakt"){ %>
+                                                    <li class="nav-item border border-secondary aktiv">
+                                                        <a class="nav-link disabled mx-5" href="/kontakt">Kontakt</a>
+                                                    </li>
+                                                    <% }else{ %>
+                                                        <li class="nav-item border border-secondary">
+                                                            <a class="nav-link disabled mx-5" href="/kontakt">Kontakt</a>
+                                                        </li>
+                                                        <% } %>
 
-            <li class="nav-item border border-secondary">
-                <a class="nav-link disabled mx-5" href="/kontakt">Kontakt</a>
-            </li>
+                                                            <% if(side == "nyheder"){ %>
+                                                                <li class="nav-item border border-secondary aktiv">
+                                                                    <a class="nav-link disabled mx-5" href="/nyheder">Nyheder</a>
+                                                                </li>
+                                                                <% }else{ %>
+                                                                    <li class="nav-item border border-secondary">
+                                                                        <a class="nav-link disabled mx-5" href="/nyheder">Nyheder</a>
+                                                                    </li>
+                                                                    <% } %>
 
-            <li class="nav-item border border-secondary">
-                <a class="nav-link disabled mx-5" href="/nyheder">Nyheder</a>
-            </li>
 
-            <div class="col-md-3 poss-tr ml-5">
-                <div class="onBanner">
-                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn-md mt-3">Søg</button>
-                    <a href="/soeg">Avanceret søg</a>
-                </div>
-            </div>
+                                                                        <div class="col-md-3 poss-tr ml-5">
+                                                                            <div class="onBanner">
+                                                                                <form action="POST" action="/soeg">
+                                                                                    <input class="form-control" type="text" placeholder="Søg" aria-label="Søg">
+                                                                                    <input type="submit" class="submit mt-1" name="submit" value="søg">
+                                                                                    <a href="/avanceretSoeg">Avanceret søg</a>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
 
+                                                                        <!-- <form id='formSearch' class="col-md-3 ml-4 mt-1" method="POST" action="/soeg">
+                                                                <input type="text" class="txt" name="txt" placeholder="Søg">
+                                                                <input type="submit" class="submit" name="submit" value="søg">
+                                                            </form> -->
+
+                                                                        <%= %>
         </ul>
     </div>
 

@@ -26,8 +26,8 @@
 
                         <section class="col-md-10 d-inline-block float-left">
                             <h3 class="pt-2">Cykler</h3>
-
-                            <hr>
+                            <hr width="">
+                            
                             <% info.forEach(infos => { %>
                                 <img src="/img/Cykler/<%= infos.cykel_billede %>" alt="Cykel Billede" class="col-md-4 float-left">
                                 <h6>
@@ -42,7 +42,7 @@
                                 </section>
                                 <% }) %>
                                     <div class="col-md-12 padding-l1 d-inline-block">
-                                        <h5 class="pt-2">Farve:</h5>
+                                        <h5 class="pt-2 d-block mb-0">Farve:</h5>
                                         <div>
                                             <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_1.jpg" alt="Cykel farve">
                                             <img class="col-md-1 p-1" src="/img/Cykelfarver/cykelfarve_2.jpg" alt="Cykel farve">
@@ -60,7 +60,7 @@
                         </section>
 
                         <h3 class="pl-3 pt-2">Tilbud</h3>
-                        <hr>
+                        <hr width="">
                         <% produkter.forEach(produkt => { %>
                             <aside class="col-md-2 float-left border mb-1">
                                 <p class="m-0">

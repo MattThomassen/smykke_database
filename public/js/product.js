@@ -1,6 +1,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+
+
+
+
+
+
     let formUpdate = document.querySelector('#formUpdate');
     const textNavn = formUpdate.navn;
     // const textNavn = formUpdate.querySelector('.navn');
@@ -62,5 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
         }
     })
+
 })
 

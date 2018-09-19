@@ -11,7 +11,8 @@ module.exports = (app) => {
             const produkter = await tilbud.visTilbud();            
             res.render('pages/etBestemtUdstyr', {
                 produkter: produkter,
-                udstyrInfo: udstyrInfo
+                udstyrInfo: udstyrInfo,
+                side: 'udstyr'
             });
         } catch (err) {
             console.log(err);

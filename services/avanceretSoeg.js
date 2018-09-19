@@ -4,6 +4,8 @@ const db = require('../config/sql').connect();
 
 module.exports = {
 
+    
+
     avanceretSoeg: (txt, kategori = [], pris, maerke = []) => {
         txt = txt == '' ? '_' : txt;
         // Herunder én løsning. Kunne med fordel gøre "produkt.fk_kategori in (?) and" dynamisk

@@ -8,7 +8,7 @@ module.exports = (app) => {
         try {
             const cykler = await adminService.adminCykler();
             res.render('pages/adminCykler', {
-            cykler: cykler
+                cykler: cykler
             });
         } catch (err) {
             console.log(err);
